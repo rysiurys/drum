@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title> JS Drum Kit</title>
+  <link rel="stylesheet" href="drumcss.css">
+</head>
+<body background="ludzie.jpg">
+  <div class="center">
+    <button class="button" data-dzwiek="beep21.mp3">Q</button>
+    <button class="button" data-dzwiek="beep41.mp3">Q</button>
+    <button class="button" data-dzwiek="beep48.mp3">Q</button>
+    <button class="button" data-dzwiek="beep50.mp3">Q</button>
+    <button class="button" data-dzwiek="CH.mp3">Q</button>
+    <button class="button" data-dzwiek="CL.mp3">Q</button>
+    <button class="button" data-dzwiek="CP.mp3">Q</button>
+  </div>
+  <div>
+
+  </div>
+
+
+  <script>
+  // var el = document.querySelectorAll('.button');
+  // console.log(el);
+  // el[1].onclick = function() {
+  //   var wartoscEl = el[1].dataset.dzwiek;
+  //   console.log(wartoscEl);
+  //
+  // }
+
+  function odpalDzwiek(nazwaPlikuMp3) {
+    var dzwiek = new Audio(nazwaPlikuMp3);
+    dzwiek.play()
+
+    console.log(dzwiek);
+  }
+
+  var listaPrzyciskow = document.querySelectorAll(".button");
+
+  for (var i = 0; i < listaPrzyciskow.length; i++) {
+    listaPrzyciskow[i].onclick = function(event) {
+      var aktualnyPrzycisk = event.target;
+      var nazwaDzwieku = aktualnyPrzycisk.dataset.dzwiek;
+      odpalDzwiek(nazwaDzwieku);
+
+    }
+  }
+
+  // console.log(liczby[0] + 6);
+  // console.log(liczby[1] + 6);
+  // console.log(liczby[2] + 6);
+  // console.log(liczby[3] + 6);
+
+
+
+  </script>
+
+
+
+
+</body>
+</html>
